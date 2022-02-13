@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css"/>
+    <title>Computer Store</title>
+    <script src="index.js" defer type="module"></script>
+</head>
+<body>
+    <h1 id="headline">Computer Store</h1>
+    <div id="container">
+        <div id="boxContainer">
+            <div class="box" id="loanBox">
+                <p id="user">Name</p>
+                <div id="balanceContainer">
+                    <p>Loan: </p>
+                    <p id="loanAmount"></p>
+                </div>
+                <div id="balanceContainer">
+                    <p>Bank: </p>
+                    <p id="bankAmount"></p>
+                </div>
+                <div id="balanceContainer">
+                    <p>Balance: </p>
+                    <p id="balanceAmount"></p>
+                </div>              
+                <button class="button" id="loanButton">Loan</button>
+            </div>
+            <div class="box" id="payBox">
+                <div>
+                    <p id="work">Work</p>
+                    <div id="balanceContainer">
+                        <p>Pay: </p>
+                        <p id="pay"></p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button" id="payBackButton" style="display: none;">Pay loan</button>
+                    <div id="buttonBox">
+                        <button class="button" id="bankButton">Bank</button>
+                        <button class="button" id="workButton">Work</button>
+                    </div> 
+                </div>
+            </div>
+            <div class="box" id="itemBox">
+                <div>
+                    <select id="itemDropdown">
+                        <option id="selectItem" value="showAll">Show all laptops</option>
+                    </select>
+                    <p>Features:</p>
+                </div>
+                <ul id="featureList"></ul>
+            </div>
+        </div>
+        <!-- <div class="box" id="itemView">
+            <div>
+                <img id="itemImage"></img>
+            </div>
+            <div id="descriptionBox">
+                <p id="itemName">So many computers</p>
+                <p id="itemDescription">Description</p>
+            </div>
+            <div id="buyBox">
+                <p id="itemPrice">KR</p>
+                <button class="button" id="buyButton">Buy</button>
+            </div>
+        </div> -->
+        <div id="itemBoxx">     
+        </div>
+    </div> 
+</body>
+</html>
