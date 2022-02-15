@@ -9,7 +9,7 @@ let itemDropdownElement = document.getElementById("itemDropdown");
 let featureListElement = document.getElementById("featureList");
 let itemBoxElement = document.getElementById("itemBox");
 
-
+//money object that stores values
 const money = {
     bank: 500,
     loan: 0,
@@ -22,6 +22,7 @@ const money = {
 let objects = [];
 updateUI();
 
+//Loan button that lets you choose loan sum
 loanButtonElement.addEventListener("click", () => {
     if (!money.hasLoan()){
         let loanPrompt = prompt("Enter loan sum");
@@ -37,6 +38,8 @@ loanButtonElement.addEventListener("click", () => {
         alert("You need to pay existing loan")
     }
 });
+
+//Bank button that calulates how much of your pay (salary) shoult go to your account vs your loan
 bankButtonElement.addEventListener("click", () => {
     if (money.hasLoan()){
         money.bank += (money.pay * 0.9);
@@ -49,6 +52,8 @@ bankButtonElement.addEventListener("click", () => {
     renderPayBack()
     updateUI()
 });
+
+//Button that is rendered to use all of your salary to downpay your loan
 payBackButtonElement.addEventListener("click", () => {
     if(money.loan - money.pay < 0){
         let rest = money.pay - money.loan;
@@ -62,12 +67,15 @@ payBackButtonElement.addEventListener("click", () => {
     renderPayBack()
     updateUI();
 });
+
+//Button that gives a small salary when clicked
 workButtonElement.addEventListener("click", () => {
     money.pay += 100;
     payElement.innerHTML = money.pay;
     renderPayBack()
 });
 
+//renders pay back button
 function renderPayBack() {
     if (money.pay > 0 && money.loan > 0) {
         payBackButtonElement.style.display = "block";
@@ -76,6 +84,7 @@ function renderPayBack() {
       }
 };
 
+//fetches api data
 fetch("https://noroff-komputer-store-api.herokuapp.com/computers")
     .then(response => response.json())
     .then(data => objects = data)
@@ -84,11 +93,13 @@ fetch("https://noroff-komputer-store-api.herokuapp.com/computers")
         console.error('Error:', error);
       });
 
+//uses api objects and renders select options for all computers
 function apiObjects(obj) {
     obj.map(x => itemDropdownElement
         .insertAdjacentHTML("beforeend", 
         `<option value="${x.id}">${x.title}</option>`)); 
 
+    //decides which object to display based on what is chosen in the select
     itemDropdownElement.addEventListener("change", (event) => {
         if (event.target.value === "noSelect"){
             featureListElement.innerHTML = "";
@@ -106,6 +117,7 @@ function apiObjects(obj) {
     });
 }
 
+//renders a single computer with the option to buy it
 function renderItem (obj) {
     const html = `
         <div class="box" id="itemView">
@@ -130,8 +142,8 @@ function renderItem (obj) {
         })
 }
 
+//checks if the balance is high enough for item to be bought
 function buyItem(price) {
-
     if (money.bank >= price){
         money.bank -= price;
         updateUI()
@@ -142,6 +154,7 @@ function buyItem(price) {
     }
 };
 
+//can be called to update UI after values have changed
 function updateUI() {
     bankElement.innerHTML = `${money.bank} kr`;
     loanElement.innerHTML = `${money.loan} kr`;
