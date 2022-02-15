@@ -16,25 +16,21 @@
     <div id="container">
         <div id="boxContainer">
             <div class="box" id="loanBox">
-                <p id="user">Name</p>
-                <div id="balanceContainer">
+                <p id="user">Customer</p>
+                <div class="balanceContainer">
                     <p>Loan: </p>
                     <p id="loanAmount"></p>
                 </div>
-                <div id="balanceContainer">
-                    <p>Bank: </p>
-                    <p id="bankAmount"></p>
-                </div>
-                <div id="balanceContainer">
+                <div class="balanceContainer">
                     <p>Balance: </p>
-                    <p id="balanceAmount"></p>
-                </div>              
+                    <p id="bankAmount"></p>
+                </div>             
                 <button class="button" id="loanButton">Loan</button>
             </div>
             <div class="box" id="payBox">
                 <div>
                     <p id="work">Work</p>
-                    <div id="balanceContainer">
+                    <div class="balanceContainer">
                         <p>Pay: </p>
                         <p id="pay"></p>
                     </div>
@@ -47,30 +43,17 @@
                     </div> 
                 </div>
             </div>
-            <div class="box" id="itemBox">
+            <div class="box" id="featureBox">
                 <div>
                     <select id="itemDropdown">
-                        <option id="selectItem" value="showAll">Show all laptops</option>
+                        <option id="selectItem" value="noSelect">Select computer to buy</option>
                     </select>
                     <p>Features:</p>
                 </div>
-                <ul id="featureList"></ul>
+                <ul id="featureList" style="font-size:smaller;"></ul>
             </div>
         </div>
-        <!-- <div class="box" id="itemView">
-            <div>
-                <img id="itemImage"></img>
-            </div>
-            <div id="descriptionBox">
-                <p id="itemName">So many computers</p>
-                <p id="itemDescription">Description</p>
-            </div>
-            <div id="buyBox">
-                <p id="itemPrice">KR</p>
-                <button class="button" id="buyButton">Buy</button>
-            </div>
-        </div> -->
-        <div id="itemBoxx">     
+        <div id="itemBox">     
         </div>
     </div> 
 </body>
