@@ -1,7 +1,7 @@
-##Asignment 4
+## Assignment 4
 Created a Computer Store for buying computers. 
 
-##Installation
+## Instalation
 Runs using Live server
 
 ## Maintainer
